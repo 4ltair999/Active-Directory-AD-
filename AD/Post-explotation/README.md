@@ -163,7 +163,8 @@ sudo chmod 777 /home/kali/Desktop/AD/
      We see how **BloodHound** gives us the option to list the domain structures
  
 <img width="1171" height="756" alt="Captura de pantalla 2026-03-03 194154" src="https://github.com/user-attachments/assets/b6ed056c-bcee-4c48-83b8-2604ccb98b15" />
-    For example, extracting information from Kerberos
+    
+For example, extracting information from Kerberos
 
 <img width="495" height="685" alt="Captura de pantalla 2026-03-03 194754" src="https://github.com/user-attachments/assets/b457dc08-7108-4de6-b7c5-d4ef1bc4efae" />
 
