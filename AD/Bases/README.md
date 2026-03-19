@@ -198,14 +198,14 @@ gpupdate /force
 <img width="693" height="446" alt="Captura de pantalla 2026-02-26 105204 1" src="https://github.com/user-attachments/assets/48375e12-7554-4c89-9dd6-369f3bdc63a2" />
 
 <img width="1014" height="587" alt="Captura de pantalla 2026-02-26 105808" src="https://github.com/user-attachments/assets/6ca2ed3d-9516-42ce-a2e1-12a4c8e45ece" />
-  We are going to link this to **GPO** to the** Ou's** that intered to us.
+We are going to link this to **GPO** to the** Ou's** that intered to us.
 
 With these two GPOs established, we will test them by logging in as a standard user without privileges. First, if we wait five minutes, the session must lock automatically. 
 
 <img width="190" height="69" alt="Captura de pantalla 2026-02-26 211320" src="https://github.com/user-attachments/assets/ed5ef35c-f3e6-4f70-9bb1-b2f1caf55248" />
 
 <img width="1028" height="786" alt="Captura de pantalla 2026-02-26 211858" src="https://github.com/user-attachments/assets/9687c560-ec5d-4c7e-bfbd-3a9a7173ed44" />
-    The lock is successful.
+The lock is successful.
 
 
 <img width="295" height="190" alt="Captura de pantalla 2026-02-26 211923" src="https://github.com/user-attachments/assets/7bdeda5f-cbd2-4453-885b-fd3ba90e6897" />
@@ -214,7 +214,7 @@ We see that the time range is met
 Second, we verify access to the GPM (Group Policy Management). 
 
 <img width="967" height="744" alt="Captura de pantalla 2026-02-26 204055" src="https://github.com/user-attachments/assets/edf61e07-0b35-4fd8-8b47-ff547d8d60b8" />
-   Access is successfully blocked as well.
+Access is successfully blocked as well.
 
 ### Task 7: Authentication Methods
 
