@@ -205,10 +205,12 @@ With these two GPOs established, we will test them by logging in as a standard u
 <img width="190" height="69" alt="Captura de pantalla 2026-02-26 211320" src="https://github.com/user-attachments/assets/ed5ef35c-f3e6-4f70-9bb1-b2f1caf55248" />
 
 <img width="1028" height="786" alt="Captura de pantalla 2026-02-26 211858" src="https://github.com/user-attachments/assets/9687c560-ec5d-4c7e-bfbd-3a9a7173ed44" />
+
 The lock is successful.
 
 
 <img width="295" height="190" alt="Captura de pantalla 2026-02-26 211923" src="https://github.com/user-attachments/assets/7bdeda5f-cbd2-4453-885b-fd3ba90e6897" />
+
 We see that the time range is met
 
 Second, we verify access to the GPM (Group Policy Management). 
