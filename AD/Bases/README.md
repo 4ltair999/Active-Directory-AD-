@@ -26,17 +26,17 @@ xfreerdp3 /u:Administrator /p:Password321 /v:10.65.163.103:3389
 ```
      Sometimes, due to protocol parsing issues, it is recommended to wrap the password in single quotes.
 
-![[Captura de pantalla 2026-02-23 210212.png]]
-    Port **3389** is the default port for RDP.
+<img width="1220" height="851" alt="Captura de pantalla 2026-02-23 210212" src="https://github.com/user-attachments/assets/d3af962f-63fa-492b-8cf1-e48bac6aa30b" />
+Port **3389** is the default port for RDP.
 
 - We complete the questions from **Task 2**
 
-![[Captura de pantalla 2026-02-23 215358.png]]
+<img width="1277" height="293" alt="Captura de pantalla 2026-02-23 215358" src="https://github.com/user-attachments/assets/6c336e0a-7f14-436a-abf0-3e18cbd69e97" />
 
 - Moving into **Task 3**, we work with objects inside **AD DS (Active Directory Domain Services)**. The **TryHackMe** platform provides an introduction.
 
-![[Captura de pantalla 2026-02-23 222659.png]]
-    Once inside, with **left click**, we can create new objects and even new **Organizational Units (OUs)** and configure them.
+<img width="729" height="445" alt="Captura de pantalla 2026-02-23 222659" src="https://github.com/user-attachments/assets/5c14e3ef-a305-48e0-8c94-2d76fee80519" />
+Once inside, with **left click**, we can create new objects and even new **Organizational Units (OUs)** and configure them.
 
 - We are now dealing with **Organizational Units (OU)**, which store **objects** such as:
 
@@ -62,8 +62,7 @@ Account Operators: Users in this group can create or modify accounts in the doma
 A machine named DC01 will have an account called DC01$
 ```
 
-![[Captura de pantalla 2026-02-23 230345.png]]
-
+<img width="1821" height="638" alt="Captura de pantalla 2026-02-23 230345" src="https://github.com/user-attachments/assets/2df7d9ae-cae0-4f17-a265-b7edfa31de56" />
 
 - In **Task 4**, we learn about:
 
@@ -72,7 +71,7 @@ A machine named DC01 will have an account called DC01$
 
 - First, we delete an **OU**, By default, OUs are protected against accidental deletion. We must disable this setting first.
 
-![[Captura de pantalla 2026-02-24 204650 2.png]]
+<img width="1104" height="807" alt="Captura de pantalla 2026-02-24 204650" src="https://github.com/user-attachments/assets/470d07e5-506d-4512-ae72-0f11a955c4a4" />
 
 - Check if an OU is protected:
 
@@ -99,13 +98,14 @@ Remove-ADOrganizationalUnit -Identity "..." -Recursive
 
 - Now we assign privileges to **phillip** over the **Sales OU** to reset passwords
 
-![[Captura de pantalla 2026-02-24 211552 2.png]]
-    Left click → **Delegate Control**
+<img width="1017" height="640" alt="Captura de pantalla 2026-02-24 211552" src="https://github.com/user-attachments/assets/f90484d0-2993-4c74-a2d1-30d5faa3dcf1" />
+Left click → **Delegate Control**
 
 - Alternative (more granular method):
 
-![[Captura de pantalla 2026-02-24 233027 3.png]]
-    Left click on the **user to be controlled** → **Properties → Advanced**
+<img width="1014" height="759" alt="Captura de pantalla 2026-02-24 233027" src="https://github.com/user-attachments/assets/11994f08-5ce0-4014-85e8-a4c41c9ea2fa" />
+
+Left click on the **user to be controlled** → **Properties → Advanced**
 
 - Now we log in as **phillip** and reset **sophie’s** password:
 
@@ -154,20 +154,20 @@ Good organization depends on correct privilege assignment via **GPOs**
 
 Tool: **Group Policy Management**
 
-![[Captura de pantalla 2026-02-26 073244.png]]
+<img width="845" height="676" alt="Captura de pantalla 2026-02-26 073244" src="https://github.com/user-attachments/assets/36cda08b-56e9-4989-a006-dbcd7cd25fe7" />
 
 - Two key parts:
 
-![[Captura de pantalla 2026-02-26 074112.png]]
+<img width="633" height="401" alt="Captura de pantalla 2026-02-26 074112" src="https://github.com/user-attachments/assets/36f5bb3b-b67d-4660-a4ae-9d24e1cf1bfd" />
 
     Where GPOs are applied
     Where GPOs are created
 
 - Edit a GPO:
 
-![[Captura de pantalla 2026-02-26 082739.png]]
+<img width="1018" height="795" alt="Captura de pantalla 2026-02-26 082739" src="https://github.com/user-attachments/assets/e43cd5d3-0192-4726-9c68-c1ca1d8e1778" />
 
-![[Captura de pantalla 2026-02-26 093924.png]]
+<img width="1024" height="457" alt="Captura de pantalla 2026-02-26 093924" src="https://github.com/user-attachments/assets/aee8b5e9-248b-44ab-b469-05bc066e70f8" />
 
 - Apply changes immediately:
 
@@ -177,11 +177,11 @@ gpupdate /force
 
 - Default refresh is 90 minutes → `/force` applies instantly
 
-![[Captura de pantalla 2026-02-26 100358.png]]
+<img width="536" height="196" alt="Captura de pantalla 2026-02-26 100358" src="https://github.com/user-attachments/assets/df47cba9-dcfb-4608-a097-1211f8914eef" />
 
 - View policy explanation:
 
-![[Captura de pantalla 2026-02-26 100233.png]]
+<img width="974" height="640" alt="Captura de pantalla 2026-02-26 100233" src="https://github.com/user-attachments/assets/91140f33-bce8-4c46-bd8d-fd59c69f78e7" />
 
 - The way we just made this **domain policy** change is one of two methods. The other can be done through the terminal, but to understand it, we need to understand that **GPM** works with the **SYSVOL** share, which allows the distribution of **GPOs**. Essentially, it's the network through which these changes are executed. As a security best practice, it's recommended that only specific **users** have access to this share. Let's do an exercise:
 
@@ -193,27 +193,28 @@ gpupdate /force
 
 - Example: Restrict Control Panel GPO
 
-![[Captura de pantalla 2026-02-26 105059.png]]
+<img width="893" height="610" alt="Captura de pantalla 2026-02-26 105059" src="https://github.com/user-attachments/assets/e2f76105-4d3e-4469-921b-85e7c701ba79" />
 
-![[Captura de pantalla 2026-02-26 105204 1.png]]
+<img width="693" height="446" alt="Captura de pantalla 2026-02-26 105204 1" src="https://github.com/user-attachments/assets/48375e12-7554-4c89-9dd6-369f3bdc63a2" />
 
-![[Captura de pantalla 2026-02-26 105808.png]]
-     We are going to link this to **GPO** to the** Ou's** that intered to us.
+<img width="1014" height="587" alt="Captura de pantalla 2026-02-26 105808" src="https://github.com/user-attachments/assets/6ca2ed3d-9516-42ce-a2e1-12a4c8e45ece" />
+  We are going to link this to **GPO** to the** Ou's** that intered to us.
 
 With these two GPOs established, we will test them by logging in as a standard user without privileges. First, if we wait five minutes, the session must lock automatically. 
 
-![[Captura de pantalla 2026-02-26 211320.png|190]]
+<img width="190" height="69" alt="Captura de pantalla 2026-02-26 211320" src="https://github.com/user-attachments/assets/ed5ef35c-f3e6-4f70-9bb1-b2f1caf55248" />
 
-![[Captura de pantalla 2026-02-26 211858.png]]
+<img width="1028" height="786" alt="Captura de pantalla 2026-02-26 211858" src="https://github.com/user-attachments/assets/9687c560-ec5d-4c7e-bfbd-3a9a7173ed44" />
     The lock is successful.
 
 
- ![[Captura de pantalla 2026-02-26 211923.png]] 
-     We see that the time range is met
+<img width="295" height="190" alt="Captura de pantalla 2026-02-26 211923" src="https://github.com/user-attachments/assets/7bdeda5f-cbd2-4453-885b-fd3ba90e6897" />
+We see that the time range is met
 
 Second, we verify access to the GPM (Group Policy Management). 
 
-![[Captura de pantalla 2026-02-26 204055.png]] Access is successfully blocked as well.
+<img width="967" height="744" alt="Captura de pantalla 2026-02-26 204055" src="https://github.com/user-attachments/assets/edf61e07-0b35-4fd8-8b47-ff547d8d60b8" />
+   Access is successfully blocked as well.
 
 ### Task 7: Authentication Methods
 
@@ -266,7 +267,7 @@ Managing active connections correctly is vital to avoid detection by the **Blue 
 sbmmap -H IP -u 'user' -p 'password'
 ```
 
-![[Captura de pantalla 2026-02-25 085756.png]]
+<img width="1351" height="348" alt="Captura de pantalla 2026-02-25 085756" src="https://github.com/user-attachments/assets/efb7049d-3d66-41a5-bbed-3de10b969db7" />
 
 
 - **NetExec (RID Brute Forcing):** To enumerate users and groups without a prior list.
@@ -275,7 +276,7 @@ sbmmap -H IP -u 'user' -p 'password'
 netexec smb <IP> -u 'user' -p 'password' --rid brute
 ```
 
-![[Captura de pantalla 2026-02-25 093215.png]]
+<img width="997" height="509" alt="Captura de pantalla 2026-02-25 093215" src="https://github.com/user-attachments/assets/c47a9681-3f69-48aa-b1fe-7d6a78c14e73" />
 
 **Password Changes & Hash Extraction:**
 
